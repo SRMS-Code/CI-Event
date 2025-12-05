@@ -1,0 +1,750 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "9cdd854415b958d805ec",
+  "position": {
+    "x": 320,
+    "y": 385.71428571428572,
+    "z": 0,
+    "height": 497.14285714285717,
+    "width": 940.00000000000011,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "eventtitle"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.eventtitle",
+              "nativeQueryRef": "CI Event Name",
+              "displayName": "CI Event Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "currency"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.currency",
+              "nativeQueryRef": "Currency",
+              "displayName": "Currency"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "estimatedbenefit"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.estimatedbenefit)",
+              "nativeQueryRef": "Planned Benefit",
+              "displayName": "Planned Benefit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calc_Measures"
+                    }
+                  },
+                  "Property": "Benefit Complete"
+                }
+              },
+              "queryRef": "Calc_Measures.Benefit Complete",
+              "nativeQueryRef": "Benefit Complete"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "facility"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.facility",
+              "nativeQueryRef": "Site Name",
+              "displayName": "Site Name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "eventyear"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.eventyear)",
+              "nativeQueryRef": "Event Year",
+              "displayName": "Event Year",
+              "format": "G"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "planquarter"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.planquarter",
+              "nativeQueryRef": "Quarter Planned",
+              "displayName": "Quarter Planned"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "plandate"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.plandate",
+              "nativeQueryRef": "Planned Event Date",
+              "displayName": "Planned Event Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "eventstatus"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.eventstatus",
+              "nativeQueryRef": "Event Status",
+              "displayName": "Event Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "completiondate"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.completiondate",
+              "nativeQueryRef": "Completion Date",
+              "displayName": "Completion Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "eventapprovaldetails"
+                    }
+                  },
+                  "Property": "FP&A Validation"
+                }
+              },
+              "queryRef": "eventapprovaldetails.FP&A Validation",
+              "nativeQueryRef": "FP&A Validation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_fpamanagers"
+                    }
+                  },
+                  "Property": "username"
+                }
+              },
+              "queryRef": "fpamanagers.username",
+              "nativeQueryRef": "Validated By",
+              "displayName": "Validated By"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "eventapprovaldetails"
+                    }
+                  },
+                  "Property": "Validated On"
+                }
+              },
+              "queryRef": "eventapprovaldetails.Validated On",
+              "nativeQueryRef": "Validated On"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calc_Measures"
+                  }
+                },
+                "Property": "Benefit Complete"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2BADB9'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3B3B3B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3B3B3B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "260.1062680344725D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.eventtitle"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.14285770681687D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_ci_event_report.estimatedbenefit)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.1428566238507D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Calc_Measures.Benefit Complete"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "225.85714470043146D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.facility"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.57145681170189D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.planquarter"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "101.57142783871359D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.plandate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.2857159506457D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.eventstatus"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "97.85714285714286D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.completiondate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.71425986049599D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "eventapprovaldetails.FP&A Validation"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.00193970772632D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fpamanagers.username"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_ci_event_report.estimatedbenefit)"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_ci_event_report.eventyear)"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EBEBEB'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8b805b25887943f0a165",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_ci_event_report"
+              }
+            },
+            "Property": "Threshold"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Fact_ci_event_report",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "Threshold"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}
