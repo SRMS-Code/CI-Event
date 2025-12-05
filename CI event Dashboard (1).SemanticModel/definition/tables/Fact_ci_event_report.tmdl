@@ -476,7 +476,7 @@ table Fact_ci_event_report
 		mode: import
 		source =
 				let
-				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"), "select * from amc_semantic_layer.vw_cievent_lookup_report", null, [EnableFolding=true])
+				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-dev-new.clqoikb1wgav.us-west-2.redshift.amazonaws.com","lvi3pld"), "select * from amc_semantic_layer_prodshare.vw_cievent_lookup_report", null, [EnableFolding=true])
 				in
 				    Source
 
