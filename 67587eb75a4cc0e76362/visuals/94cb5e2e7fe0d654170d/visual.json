@@ -1,0 +1,765 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "94cb5e2e7fe0d654170d",
+  "position": {
+    "x": 323,
+    "y": 64.310654987000888,
+    "z": 2000,
+    "height": 655.68934501299907,
+    "width": 934,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "eventid"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.eventid",
+              "nativeQueryRef": "Event ID",
+              "displayName": "Event ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "eventtitle"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.eventtitle",
+              "nativeQueryRef": "CI Event Name",
+              "displayName": "CI Event Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "eventstatus"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.eventstatus",
+              "nativeQueryRef": "Event Status",
+              "displayName": "Event Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "planquarter"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.planquarter",
+              "nativeQueryRef": "Quarter Planned",
+              "displayName": "Quarter Planned"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "facility"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.facility",
+              "nativeQueryRef": "Site Name",
+              "displayName": "Site Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "teamleader"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.teamleader",
+              "nativeQueryRef": "Facilitator",
+              "displayName": "Facilitator"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "customername"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.customername",
+              "nativeQueryRef": "Customer Name",
+              "displayName": "Customer Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "currency"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.currency",
+              "nativeQueryRef": "Currency",
+              "displayName": "Currency"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "estimatedbenefit"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.estimatedbenefit)",
+              "nativeQueryRef": "Planned Benefit",
+              "displayName": "Planned Benefit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calc_Measures"
+                    }
+                  },
+                  "Property": "Benefit Complete"
+                }
+              },
+              "queryRef": "Calc_Measures.Benefit Complete",
+              "nativeQueryRef": "Benefit Complete"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "benefiteffectivedate"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.benefiteffectivedate",
+              "nativeQueryRef": "Benefit Effective Date",
+              "displayName": "Benefit Effective Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "projectyearbenefit"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.projectyearbenefit)",
+              "nativeQueryRef": "Current Year Benefit1",
+              "displayName": "Current Year Benefit"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "carryoverbenefit"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.carryoverbenefit)",
+              "nativeQueryRef": "Carry Over Benefit1",
+              "displayName": "Carry Over Benefit"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "projectyearbenefitmonths"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.projectyearbenefitmonths)",
+              "nativeQueryRef": "Project Year Benefit Months",
+              "displayName": "Project Year Benefit Months"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "carryoverbenefitmonths"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.carryoverbenefitmonths)",
+              "nativeQueryRef": "Carry Over Benefit Months",
+              "displayName": "Carry Over Benefit Months"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "createdon"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.createdon",
+              "nativeQueryRef": "Date Created",
+              "displayName": "Date Created"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "plandate"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.plandate",
+              "nativeQueryRef": "Planned Event Date",
+              "displayName": "Planned Event Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "duedate"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.duedate",
+              "nativeQueryRef": "Due Date",
+              "displayName": "Due Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "completiondate"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.completiondate",
+              "nativeQueryRef": "Completion Date",
+              "displayName": "Completion Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ci_event_report"
+                        }
+                      },
+                      "Property": "In Process Days Open"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_ci_event_report.In Process Days Open)",
+              "nativeQueryRef": "In Process Days Open",
+              "displayName": "In Process Days Open"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "region"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.region",
+              "nativeQueryRef": "Region",
+              "displayName": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "district"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.district",
+              "nativeQueryRef": "District",
+              "displayName": "District"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.department",
+              "nativeQueryRef": "Department",
+              "displayName": "Department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "cimanager"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.cimanager",
+              "nativeQueryRef": "CI Manager",
+              "displayName": "CI Manager"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "problemstatement"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.problemstatement",
+              "nativeQueryRef": "Problem Statement",
+              "displayName": "Problem Statement"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "businesscase"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.businesscase",
+              "nativeQueryRef": "Business case",
+              "displayName": "Business case"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ci_event_report"
+                    }
+                  },
+                  "Property": "goalstatement"
+                }
+              },
+              "queryRef": "Fact_ci_event_report.goalstatement",
+              "nativeQueryRef": "Goal statement",
+              "displayName": "Goal statement"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_ci_event_report"
+                  }
+                },
+                "Property": "eventid"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2BADB9'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3B3B3B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3B3B3B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "216.30556047824854D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.eventtitle"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.46314252805796D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.eventstatus"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "321.80837363720445D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.problemstatement"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "347.84004068376044D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.goalstatement"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "380.95786484642883D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.businesscase"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143.26738284961485D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_ci_event_report.carryoverbenefitmonths)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.5225191477538D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_ci_event_report.projectyearbenefitmonths)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.50551655306552D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.customername"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "148.02199369111105D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.facility"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117.23078278951196D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_ci_event_report.teamleader"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
