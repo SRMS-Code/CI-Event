@@ -1,0 +1,265 @@
+table Dim_aosgoaltable
+	lineageTag: 20fcb96c-cd0d-4040-97d5-6b33cbb319d1
+
+	column region
+		dataType: string
+		lineageTag: 9762324b-7dde-4cfe-8c0b-c8b0c4ca7b3b
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column director
+		dataType: string
+		lineageTag: af7a680f-834f-4b57-8744-061b2582cd52
+		summarizeBy: none
+		sourceColumn: director
+
+		annotation SummarizationSetBy = Automatic
+
+	column district
+		dataType: string
+		lineageTag: af18520e-c9dd-484e-9098-26dc4e0422b3
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 36473f2e-55a8-47ae-9328-c1caaabcace9
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column baseline_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e309b3ad-481d-4a48-91de-4915a8138e43
+		summarizeBy: none
+		sourceColumn: baseline_date
+
+		variation Variation
+			isDefault
+			relationship: d718ee32-e2f2-461b-86da-f513145a4a9b
+			defaultHierarchy: LocalDateTable_e14b893c-e215-45c8-8fb4-2525e11e27b6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column goal_measurement_months
+		dataType: int64
+		formatString: 0
+		lineageTag: 2825038d-9da3-4563-b8af-a4e32b13d685
+		summarizeBy: sum
+		sourceColumn: goal_measurement_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 48f4493d-bf82-4dd8-94ea-1bbfdcdc7f7b
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_id
+		dataType: string
+		lineageTag: d0692d35-906e-40ab-98d6-1a851eac7e08
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system_code
+		dataType: string
+		lineageTag: 6bc21e75-9e22-4195-ab1c-9792d9117ae9
+		summarizeBy: none
+		sourceColumn: source_system_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column profit_center
+		dataType: int64
+		formatString: 0
+		lineageTag: 09683e52-a49f-4b04-a73a-fb3ea619f1f8
+		summarizeBy: sum
+		sourceColumn: profit_center
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_group
+		dataType: string
+		lineageTag: f3fe7f0a-68b8-488b-8c67-f3d3dd6a4136
+		summarizeBy: none
+		sourceColumn: report_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column goal_group
+		dataType: string
+		lineageTag: ba47f187-e217-455a-9672-164f546c8e53
+		summarizeBy: none
+		sourceColumn: goal_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column head_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f45468f-43ab-4913-8f2e-fb9c506d8982
+		summarizeBy: sum
+		sourceColumn: head_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_goal_level
+		dataType: string
+		lineageTag: fcece8da-5116-487b-8fe3-afebac176a2e
+		summarizeBy: none
+		sourceColumn: site_goal_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column aos_maturity_points
+		dataType: int64
+		formatString: 0
+		lineageTag: 1adb12a4-d285-483b-82d8-a443d8876b51
+		summarizeBy: sum
+		sourceColumn: aos_maturity_points
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_44_elements
+		dataType: int64
+		formatString: 0
+		lineageTag: 35b969b2-490a-4c84-9a41-a4ae563b8eea
+		summarizeBy: sum
+		sourceColumn: top_44_elements
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_44_points
+		dataType: int64
+		formatString: 0
+		lineageTag: 63230366-7315-4761-8f64-e9cb61372b5a
+		summarizeBy: sum
+		sourceColumn: top_44_points
+
+		annotation SummarizationSetBy = Automatic
+
+	column completed_events
+		dataType: int64
+		formatString: 0
+		lineageTag: bf0b15a0-ad52-4016-a072-64a0834f2d22
+		summarizeBy: sum
+		sourceColumn: completed_events
+
+		annotation SummarizationSetBy = Automatic
+
+	column one_percentage_ebitda_target
+		dataType: double
+		formatString: 0.0
+		lineageTag: eda44bc2-8fa6-4095-94c3-cab4906db065
+		summarizeBy: sum
+		sourceColumn: one_percentage_ebitda_target
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_name
+		dataType: string
+		lineageTag: 9f6cde2f-37d9-4164-b086-4371dc3022fd
+		summarizeBy: none
+		sourceColumn: facility_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_state_country
+		dataType: string
+		lineageTag: ec36785a-38ed-4963-8e5a-753b448fc618
+		summarizeBy: none
+		sourceColumn: city_state_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_44_target_level
+		dataType: string
+		lineageTag: b29f8cef-1fa2-462b-a0fd-4b863159c65b
+		summarizeBy: none
+		sourceColumn: top_44_target_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key 1' = Dim_aosgoaltable[facility_id] & "_" & Dim_aosgoaltable[year]
+		lineageTag: 0a50d661-6cb2-4cd6-b4cc-a1339d842cc8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_center
+		dataType: string
+		lineageTag: 8463d0b2-70d1-4d8e-b513-72bc5130b1f0
+		summarizeBy: none
+		sourceColumn: site_center
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_center_description
+		dataType: string
+		lineageTag: b4b94107-8896-43d6-a821-efacae790a4e
+		summarizeBy: none
+		sourceColumn: site_center_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column filter_key
+		dataType: string
+		lineageTag: d86977e0-4f41-4974-bea4-4dc9f125b687
+		summarizeBy: none
+		sourceColumn: filter_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_key
+		dataType: string
+		lineageTag: d99d75d5-9a47-4ab2-98bf-f37dd725db94
+		summarizeBy: none
+		sourceColumn: facility_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column sitecenter_key
+		dataType: string
+		lineageTag: 19fe0042-6356-4dc9-92a4-1dca9de142b3
+		summarizeBy: none
+		sourceColumn: sitecenter_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_date_row_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 38cb4e41-6970-4155-933c-9c1b38757a4b
+		summarizeBy: sum
+		sourceColumn: report_date_row_no
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_aosgoaltable = m
+		mode: import
+		source =
+				let
+				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"), "select * from amc_semantic_layer.vw_aos_goal", null, [EnableFolding=true])
+				in
+				    Source
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

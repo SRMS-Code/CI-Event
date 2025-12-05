@@ -1,0 +1,54 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Fact_ci_event_report","vw_cievent_kpi","vw_fpavalidation","Dim_fpamanagers","eventapprovaldetails","Dim_aosgoaltable","Dim_Currency","Dim_sitemaster","Dim_languages","Translation details","Last Updated"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Fact_ci_event_report
+ref table DateTableTemplate_280e6b18-2a1f-4f1a-9ca3-965c37c53505
+ref table LocalDateTable_3dcc68ec-23f9-4268-a6a2-089c420a54f2
+ref table LocalDateTable_835f3892-d07f-4cf0-843b-a48a59b7d20f
+ref table LocalDateTable_d795fab9-dcc0-428f-b7e7-f48b21cd0210
+ref table vw_cievent_kpi
+ref table vw_fpavalidation
+ref table Dim_fpamanagers
+ref table eventapprovaldetails
+ref table LocalDateTable_b4f32450-df12-4b28-8273-ab0c005b3c6a
+ref table LocalDateTable_716c8e84-81d3-4daf-b38e-b1e003b379e9
+ref table Dim_aosgoaltable
+ref table LocalDateTable_e14b893c-e215-45c8-8fb4-2525e11e27b6
+ref table LocalDateTable_7b343dc7-dade-4e06-b54a-ca1b0d829180
+ref table Dim_Currency
+ref table LocalDateTable_0d630978-200f-4b6f-b2cb-45039097185b
+ref table LocalDateTable_24148cfc-b271-433a-b6c2-30180f3e54e9
+ref table LocalDateTable_81807df2-7eb6-4d2e-bb66-0ea2fe58cd21
+ref table Calc_Measures
+ref table LocalDateTable_a3b401d6-a807-47f3-a184-168c3f7f69e3
+ref table LocalDateTable_aa32761f-2c54-48a2-829e-f0c06830043b
+ref table LocalDateTable_19c631fc-f269-4b35-9926-af6b706bea43
+ref table LocalDateTable_fb3c67f4-805b-415d-bf14-ff51ff5e9e24
+ref table Dim_sitemaster
+ref table LocalDateTable_60e89065-c984-4f53-b4d5-2a123ea37754
+ref table LocalDateTable_ac446bb0-8d42-4b5f-9b13-e44f54c2e36c
+ref table LocalDateTable_e363bb4a-2dbc-4290-99f4-c7bca7d5d4d3
+ref table LocalDateTable_4391b859-367a-4d3d-9922-ed38f4cf5f46
+ref table LocalDateTable_e0021007-bd59-4b0a-aa88-2055932bf9cb
+ref table LocalDateTable_f68effe7-fadf-4ede-b63a-2c084d81971f
+ref table LocalDateTable_a82fee8f-43c0-4f9d-9772-10fd2d7d1983
+ref table LocalDateTable_a76f788a-633e-4a3f-9e85-231b372ec17b
+ref table TranslationMeasures
+ref table Dim_languages
+ref table 'Translation details'
+ref table 'Last Updated'
+ref table LocalDateTable_8777cbfc-4e71-4e15-a1c6-a44856761e26
+
+ref cultureInfo en-US
+

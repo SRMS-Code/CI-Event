@@ -1,0 +1,41 @@
+table 'Translation details'
+	lineageTag: 67d0082e-7a95-4444-bab8-48432b2df49e
+
+	column 'translation code'
+		dataType: string
+		lineageTag: 7ce2170a-3b29-4268-916e-f9f252aed1e9
+		summarizeBy: none
+		sourceColumn: translation code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Language code'
+		dataType: string
+		lineageTag: fb58e482-cdfe-45c5-8998-160979194ef0
+		summarizeBy: none
+		sourceColumn: Language code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Translation value'
+		dataType: string
+		lineageTag: f60ed699-23a4-4226-b88c-1560969a7976
+		summarizeBy: none
+		sourceColumn: Translation value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Translation details' = m
+		mode: import
+		source =
+				let
+				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"), "select * from amc_semantic_layer.translation_details td #(lf)where dashboard_name = 'CI event Dashboard'", null, [EnableFolding=true]),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(Source, {"translation code"}, "Attribute", "Value"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Unpivoted Other Columns",{{"Attribute", "Language code"}, {"Value", "Translation value"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

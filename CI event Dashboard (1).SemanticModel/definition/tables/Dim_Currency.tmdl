@@ -1,0 +1,61 @@
+table Dim_Currency
+	lineageTag: 9d416b8f-01c6-4b59-ba23-59bca8b6a495
+
+	column id
+		dataType: double
+		lineageTag: 16303245-31b8-4294-ad60-5f9d662cb93b
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency_code
+		dataType: string
+		lineageTag: cc48c641-3a61-4a7a-9a84-7309fcd0b0f8
+		summarizeBy: none
+		sourceColumn: currency_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_symbol
+		dataType: string
+		lineageTag: f2465323-72fb-4840-afa8-198ea173b7a5
+		summarizeBy: none
+		sourceColumn: currency_symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: dc2a4ce0-8877-4095-b92b-cb5a8e9c88e3
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column threshold
+		dataType: double
+		lineageTag: ad4748c1-2db6-4bc5-8d7c-f96059df0d1b
+		summarizeBy: none
+		sourceColumn: threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Dim_Currency = m
+		mode: import
+		source =
+				let
+				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"), "select id,currency_code,currency_symbol,description, threshold from amc_semantic_layer.currency c", null, [EnableFolding=true])
+				in
+				    Source
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,486 @@
+table Fact_ci_event_report
+	lineageTag: b040c618-f5f5-4f40-9cbc-6914aa83e5b0
+
+	column eventid
+		dataType: string
+		lineageTag: 3f436700-9c68-4c52-9daa-cf0c03bc7471
+		summarizeBy: none
+		sourceColumn: eventid
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility
+		dataType: string
+		lineageTag: 7fc28486-3ef2-4779-adfd-27279a863fee
+		summarizeBy: none
+		sourceColumn: facility
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventtitle
+		dataType: string
+		lineageTag: 60021ca2-b398-452b-97ae-071f6cd202cf
+		summarizeBy: none
+		sourceColumn: eventtitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventtype
+		dataType: string
+		lineageTag: 2f062e4b-4147-432d-9fdb-cb778defe1ab
+		summarizeBy: none
+		sourceColumn: eventtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column approvingdirector
+		dataType: string
+		lineageTag: 57e0b272-5efe-4fcf-8b1e-2659062c68f8
+		summarizeBy: none
+		sourceColumn: approvingdirector
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 50180121-ddf1-4951-af58-2c5672d57976
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventstatus
+		dataType: string
+		lineageTag: fc445519-49c0-4c36-8f40-7fa157f372aa
+		summarizeBy: none
+		sourceColumn: eventstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column completiondate
+		dataType: dateTime
+		formatString: Mm/dd/yyyy
+		lineageTag: ce8ce813-b742-4a54-b8a6-2f0da1cf4be7
+		summarizeBy: none
+		sourceColumn: completiondate
+
+		variation Variation
+			isDefault
+			relationship: 7567c391-ffd7-4b68-967b-e8249a1c9558
+			defaultHierarchy: LocalDateTable_3dcc68ec-23f9-4268-a6a2-089c420a54f2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column cimanager
+		dataType: string
+		lineageTag: 4002ce54-135c-4af3-96b6-5fb1f91e602a
+		summarizeBy: none
+		sourceColumn: cimanager
+
+		annotation SummarizationSetBy = Automatic
+
+	column planning_eventid
+		dataType: string
+		lineageTag: 6fa79f79-646a-4eba-b879-6c31cccf21df
+		summarizeBy: none
+		sourceColumn: planning_eventid
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimatedbenefit
+		dataType: double
+		formatString: 0
+		lineageTag: e3a1baba-bc99-4726-8b4d-2d22cf030e8d
+		summarizeBy: sum
+		sourceColumn: estimatedbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column actualbenefit
+		dataType: double
+		lineageTag: da3d4cf5-b87c-4986-b835-b1e2b821403f
+		summarizeBy: sum
+		sourceColumn: actualbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column benefittype
+		dataType: string
+		lineageTag: 9314740a-8998-4203-a1bc-c84fa3d027c6
+		summarizeBy: none
+		sourceColumn: benefittype
+
+		annotation SummarizationSetBy = Automatic
+
+	column plandate
+		dataType: dateTime
+		formatString: Mm/dd/yyyy
+		lineageTag: 23a0d114-28c7-4a45-9d30-95efc68b1731
+		summarizeBy: none
+		sourceColumn: plandate
+
+		variation Variation
+			isDefault
+			relationship: 4825798d-2b5b-41ca-b1e6-585695c7e852
+			defaultHierarchy: LocalDateTable_835f3892-d07f-4cf0-843b-a48a59b7d20f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column planquarter
+		dataType: string
+		lineageTag: 77b3d550-639e-4ea2-a2ac-acb4908997ff
+		summarizeBy: none
+		sourceColumn: planquarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 5422ef46-3669-43f2-acba-e777be969562
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column benefiteffectivedate
+		dataType: dateTime
+		formatString: Mm/dd/yyyy
+		lineageTag: db706cec-b48d-4bc5-960f-7a37d392dda6
+		summarizeBy: none
+		sourceColumn: benefiteffectivedate
+
+		variation Variation
+			isDefault
+			relationship: 0b43f6b1-dc5c-45bf-8590-6b83d50cc58a
+			defaultHierarchy: LocalDateTable_d795fab9-dcc0-428f-b7e7-f48b21cd0210.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column projectyearbenefit
+		dataType: int64
+		formatString: 0
+		lineageTag: 0424bdc2-9e26-4ee7-9b04-ede03e8919c4
+		summarizeBy: sum
+		sourceColumn: projectyearbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+	column projectyearbenefitmonths
+		dataType: int64
+		formatString: 0
+		lineageTag: cd3242e2-7b00-4a56-a26f-b4df52ec5e3a
+		summarizeBy: sum
+		sourceColumn: projectyearbenefitmonths
+
+		annotation SummarizationSetBy = Automatic
+
+	column carryoverbenefit
+		dataType: int64
+		formatString: 0
+		lineageTag: 936a960f-4987-4953-9305-42d905352d37
+		summarizeBy: sum
+		sourceColumn: carryoverbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+	column carryoverbenefitmonths
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e33dc1f-48ce-4d1c-943e-15cca70c2057
+		summarizeBy: sum
+		sourceColumn: carryoverbenefitmonths
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 9b6ca817-52f4-4bfe-9a2d-3b47225cd231
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column district
+		dataType: string
+		lineageTag: 81374ab9-99ff-4fd3-9f52-26ab41c60fc0
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column businesscase
+		dataType: string
+		lineageTag: 5e5039f3-d89b-4391-a15c-85dd3af79c58
+		summarizeBy: none
+		sourceColumn: businesscase
+
+		annotation SummarizationSetBy = Automatic
+
+	column customername
+		dataType: string
+		lineageTag: 17237aed-42a3-4fca-ba44-b782bdc68329
+		summarizeBy: none
+		sourceColumn: customername
+
+		annotation SummarizationSetBy = Automatic
+
+	column datesubmittedforapproval
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1fe0159e-a3a0-4630-b0e6-a3c1c0b632f3
+		summarizeBy: none
+		sourceColumn: datesubmittedforapproval
+
+		variation Variation
+			isDefault
+			relationship: 1e6be693-25ca-47d6-a179-dfde6a6c5602
+			defaultHierarchy: LocalDateTable_0d630978-200f-4b6f-b2cb-45039097185b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column goalstatement
+		dataType: string
+		lineageTag: 19a7042e-2a55-4210-a94e-bb5a33510ded
+		summarizeBy: none
+		sourceColumn: goalstatement
+
+		annotation SummarizationSetBy = Automatic
+
+	column problemstatement
+		dataType: string
+		lineageTag: cdbddc1e-4b99-4883-afe4-4f1352a2476a
+		summarizeBy: none
+		sourceColumn: problemstatement
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: Mm/dd/yyyy
+		lineageTag: 562d0ba6-444e-4aad-ab47-88f1500c990c
+		summarizeBy: none
+		sourceColumn: createdon
+
+		variation Variation
+			isDefault
+			relationship: 8e32e129-3eb9-4ae6-bd0c-ab11d550d410
+			defaultHierarchy: LocalDateTable_24148cfc-b271-433a-b6c2-30180f3e54e9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column duedate
+		dataType: dateTime
+		formatString: Mm/dd/yyyy
+		lineageTag: 8cc0d3f9-8370-4041-8864-5d4d8a128730
+		summarizeBy: none
+		sourceColumn: duedate
+
+		variation Variation
+			isDefault
+			relationship: f48348c6-3724-4bfc-8b4d-91740eff4014
+			defaultHierarchy: LocalDateTable_81807df2-7eb6-4d2e-bb66-0ea2fe58cd21.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column teamleader
+		dataType: string
+		lineageTag: 3158008f-fc3a-4bb5-a301-fcdfe5d2a876
+		summarizeBy: none
+		sourceColumn: teamleader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key 1' = Fact_ci_event_report[facility_id] & "_" & Fact_ci_event_report[eventyear]
+		lineageTag: 123457ba-868c-4f90-b37a-6d2b32122a2f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventyear = YEAR(Fact_ci_event_report[plandate])
+		formatString: 0
+		lineageTag: 42a2b426-bb53-4e5d-a3b3-db5f51fe94a6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Benefit = IF(Fact_ci_event_report[actualbenefit] = 0 || ISBLANK(Fact_ci_event_report[actualbenefit]), Fact_ci_event_report[estimatedbenefit], Fact_ci_event_report[actualbenefit])
+		formatString: 0
+		lineageTag: 19fc3b60-784b-4145-bf32-8493c12ab28d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Same Completion Year' = IF(Fact_ci_event_report[eventyear] = Fact_ci_event_report[completionyear], 1, 0)
+		lineageTag: fa31410c-fe52-4076-a01c-a4fd78cf35ae
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column completionyear = YEAR(Fact_ci_event_report[completiondate])
+		formatString: 0
+		lineageTag: a2eb3ce9-2888-4c16-9a3f-ac2c63b415ac
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In Process Days Open' = IF(ISBLANK(Fact_ci_event_report[plandate]), 0, IF(ISBLANK(Fact_ci_event_report[completiondate]), DATEDIFF(Fact_ci_event_report[plandate], TODAY(), DAY), DATEDIFF(Fact_ci_event_report[plandate], Fact_ci_event_report[completiondate], DAY)))
+		formatString: 0
+		lineageTag: 473668de-59bd-4ddf-9bce-54f59b99a689
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Needs FPA Validation' =
+			
+			var Threshold = LOOKUPVALUE('Dim_Currency'[Threshold],'Dim_Currency'[currency_code],SELECTEDVALUE(Fact_ci_event_report[Currency]))
+			var result = Calc_Measures[Benefit Complete]
+			var answer = IF(result >= Threshold ,1,0)
+			var benefit = result >= 30000      --IF((result >= 30000) > Threshold,1)
+			return IF(answer,"yes","no" )
+		lineageTag: 35f69212-6b9c-4194-b17a-9ce311e1667b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Threshold = ```
+			
+			var Threshold = LOOKUPVALUE('Dim_Currency'[Threshold],'Dim_Currency'[currency_code],Fact_ci_event_report[Currency])
+			var Benefit = CALCULATE(Sum(Fact_ci_event_report[actualbenefit]), Fact_ci_event_report[EventStatus]="Complete")
+			Var answer = IF(Benefit >= 0, Benefit, 0) 
+			var Result = IF(answer >= Threshold,1,0)
+			return Result
+			```
+		formatString: 0
+		lineageTag: 2b4c335e-2252-4df6-bacc-95c32fbc294c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actualbenefit_format = FORMAT(Fact_ci_event_report[actualbenefit],"#,0")
+		lineageTag: 7f60da99-9ba1-4ae1-ab53-f5c130d130c2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Benefit_Update =
+			
+			IF(Fact_ci_event_report[actualbenefit] = 0 || ISBLANK(Fact_ci_event_report[actualbenefit]), Fact_ci_event_report[Estimatedbenefit_format], Fact_ci_event_report[Actualbenefit_format])
+		lineageTag: 8b00192d-0ce3-4580-8e75-72224ba60c52
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estimatedbenefit_format =
+			
+			var result = LOOKUPVALUE('Dim_Currency'[currency_symbol],'Dim_Currency'[currency_code],(Fact_ci_event_report[currency]))
+			return CONCATENATE(result,FORMAT(Fact_ci_event_report[estimatedbenefit],"#,0"))
+		lineageTag: 071a2484-e4fd-42e8-a13e-286d641b2565
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system_code
+		dataType: string
+		lineageTag: 4e619acd-c777-4d91-a09c-d07ddc31c76b
+		summarizeBy: none
+		sourceColumn: source_system_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_id
+		dataType: string
+		lineageTag: f5f67427-7747-42e1-9392-17ff1677eb85
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_center
+		dataType: string
+		lineageTag: 08dc623e-d8bd-4cf4-9d62-f41bcec4da2f
+		summarizeBy: none
+		sourceColumn: site_center
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_center_description
+		dataType: string
+		lineageTag: c3a046c1-1bcc-4da1-b9f2-eb8bfd30c5f4
+		summarizeBy: none
+		sourceColumn: site_center_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column filter_key
+		dataType: string
+		lineageTag: 264c7739-4ef2-4f41-8418-7e9d785d9bb8
+		summarizeBy: none
+		sourceColumn: filter_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_key
+		dataType: string
+		lineageTag: 904a4fa5-c401-4843-a1fd-54c27fd14394
+		summarizeBy: none
+		sourceColumn: facility_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column sitecenter_key
+		dataType: string
+		lineageTag: 28314a5e-4b75-4c48-a9ea-acac0ef365ee
+		summarizeBy: none
+		sourceColumn: sitecenter_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_date_row_no
+		dataType: int64
+		formatString: 0
+		lineageTag: eda609df-fe54-48d8-ac49-f8f56f50557f
+		summarizeBy: sum
+		sourceColumn: report_date_row_no
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_ci_event_report = m
+		mode: import
+		source =
+				let
+				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"), "select * from amc_semantic_layer.vw_cievent_lookup_report", null, [EnableFolding=true])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

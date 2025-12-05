@@ -1,0 +1,332 @@
+table Calc_Measures
+	lineageTag: 0759e953-08ab-4eca-abaf-2f35281166b5
+
+	measure 'Planned Benefits' = ```
+			
+			var result = CALCULATE(SUM(Fact_ci_event_report[Benefit]))
+			var formattedResult = IF(result >= 1000000000, FORMAT(result/1000000000, "#,#.0B"), 
+			                      IF(result >= 1000000, FORMAT(result/1000000, "#,#.0M"),
+			                      IF(result >= 1000, FORMAT(result/1000, "#,#.0K"),
+			                      FORMAT(result, "#,#.0"))))
+			var symbol = LOOKUPVALUE('Dim_Currency'[currency_symbol], 'Dim_Currency'[currency_code], SELECTEDVALUE(Fact_ci_event_report[Currency]))
+			return IF(ISBLANK(symbol), "N/A", CONCATENATE(symbol, formattedResult))
+			```
+		lineageTag: 73a8b789-c2f3-4784-b69c-cb81560d2f64
+
+	measure Complete =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[Same Completion Year] = 1, Fact_ci_event_report[eventstatus]="Complete")
+			return
+			IF(answer > 0, answer, 0)
+		lineageTag: 0258f649-76b6-476f-bf0c-c6e3cb095aeb
+
+	measure 'In Process' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="In Process" && NOT(ISBLANK('Fact_ci_event_report'[plandate])))
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: bcca73c0-4971-4691-9329-96fc7f243461
+
+	measure 'New Event' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="New Event")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 09168e0d-0b9e-4b65-a57c-a3dea76ba370
+
+	measure 'On Hold' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="On Hold")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 881b3c16-dd6d-4276-a046-b44744eab99d
+
+	measure Accepted =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="Accepted" && NOT(ISBLANK('Fact_ci_event_report'[plandate])))
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 06c74d5f-1e94-4d67-ad2a-6a9286b63759
+
+	measure Monitoring =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="Monitoring")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: f48be355-0892-4d26-b1a8-34f6d9b0d660
+
+	measure 'Need Info' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="Need Info")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 10d1714b-c383-42e2-be77-32716be11dcc
+
+	measure 'Pending CI Mgr' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="Pending CI Manager Validation")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: bf560ed0-b874-4398-92f2-63f2ab26441b
+
+	measure 'Pending Approval' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="Pending Approval")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 88102602-38e2-4d1d-b525-6a2ace6addbf
+
+	measure 'Pending Validation' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="Pending FP&A Validation")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 8f9228c6-2853-4c77-a622-49b0cb9a54b9
+
+	measure 'Pending Plan Approval' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), Fact_ci_event_report[eventstatus]="Pending Project Plan Approval")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: f0f89fd8-54d6-4770-bbe5-13ad5e589cc1
+
+	measure 'Benefit Complete' =
+			
+			var answer = CALCULATE(Sum(Fact_ci_event_report[actualbenefit]), Fact_ci_event_report[EventStatus]="Complete")
+			return
+			IF(answer >= 0, answer, 0)
+		formatString: 0
+		lineageTag: 927fb969-afc8-4321-ac7b-a60eca151043
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'FP&A Validated' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]), FILTER(eventapprovaldetails,eventapprovaldetails[FP&A Validation]="Approved"))
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: e3005de6-b4d9-4120-a08d-e42f0ebe65a9
+
+	measure 'Validated Benefit' =
+			
+			var answer = CALCULATE(sum(Fact_ci_event_report[actualbenefit]),FILTER(eventapprovaldetails,eventapprovaldetails[FP&A Validation]="Approved"))
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: ff573cd9-d4ac-43d9-bf88-df036c64682d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Validated_Benefit_Format = ```
+			
+			var answer = [Validated Benefit]
+			var formattedResult = IF(answer >= 1000000000, FORMAT(answer/1000000000, "0.0B"), 
+			                      IF(answer >= 1000000, FORMAT(answer/1000000, "0.0M"),
+			                      IF(answer >= 1000, FORMAT(answer/1000, "0.0K"),
+			                      FORMAT(answer, "0.0"))))
+			var symbol = LOOKUPVALUE('Dim_Currency'[currency_symbol], 'Dim_Currency'[currency_code], SELECTEDVALUE(Fact_ci_event_report[currency]))
+			var result =  CONCATENATE(symbol, formattedResult)
+			return
+			IF(ISBLANK(symbol), "N/A", IF(answer > 0, result, 0))
+			```
+		lineageTag: 0bced152-bb41-4768-8107-6872777f9dbd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %Validated =
+			
+			var symbol = LOOKUPVALUE('Dim_Currency'[currency_symbol], 'Dim_Currency'[currency_code], SELECTEDVALUE(Fact_ci_event_report[Currency]))
+			return IF(ISBLANK(symbol), "N/A", [Validated Benefit]/sum(Fact_ci_event_report[benefit]))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: eacf59df-41c0-458a-b974-feb2158f9056
+
+	measure 'Complete Sites' =
+			
+			var answer = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[facility]),Fact_ci_event_report[eventstatus]="Complete")
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0
+		lineageTag: 1267ba9a-dc31-4f43-b61a-97f94caa3559
+
+	measure Benefit_Complete_Format = ```
+			
+			var result = [Benefit Complete]
+			var formattedResult = IF(result >= 1000000000, FORMAT(result/1000000000, "0,0.0B"), 
+			                      IF(result >= 1000000, FORMAT(result/1000000, "0,0.0M"),
+			                      IF(result >= 1000, FORMAT(result/1000, "0,0.0K"),
+			                      FORMAT(result, "0,0.0"))))
+			var symbol = LOOKUPVALUE('Dim_Currency'[currency_symbol], 'Dim_Currency'[currency_code], SELECTEDVALUE(Fact_ci_event_report[currency]))
+			return CONCATENATE(symbol,IF(formattedResult = BLANK(),0 ,formattedResult))
+			```
+		lineageTag: 40489631-19e1-4693-be47-f06112c927fd
+
+	measure '1% EBITDA Target' = ```
+			
+			var result = CALCULATE(SUM(Dim_aosgoaltable[one_percentage_ebitda_target]))
+			var formattedResult = IF(result >= 1000000000, FORMAT(result/1000000000, "#,#.#B"), 
+			                      IF(result >= 1000000, FORMAT(result/1000000, "#,#.#M"),
+			                      IF(result >= 1000, FORMAT(result/1000, "#,#.#K"),
+			                      FORMAT(result, "#,#.#"))))
+			var symbol = LOOKUPVALUE('Dim_Currency'[currency_symbol], 'Dim_Currency'[currency_code], SELECTEDVALUE(Fact_ci_event_report[currency]))
+			return CONCATENATE(symbol, IF(formattedResult = BLANK(),0,formattedResult))
+			```
+		lineageTag: e6a8c39b-0416-4c96-9ffd-1ed70ef1d1ec
+
+	measure '% Planned Sites' =
+			
+			var Facility_Name = DISTINCTCOUNT(Fact_ci_event_report[facility])
+			var Americold_Facility = DISTINCTCOUNT(Dim_aosgoaltable[facility_name])
+			var answer = Facility_Name / Americold_Facility
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: de54b686-96f9-49fe-b0ac-e5451370bac5
+
+	measure '% Events Planned' =
+			
+			var Kaizen_Name = Count(Fact_ci_event_report[eventid])
+			var Completed_Events = sum(Dim_aosgoaltable[completed_events])
+			var answer = Kaizen_Name / Completed_Events
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 15a8e623-4c03-4c80-854b-6e52261fe6cd
+
+	measure '% Benefit Planned' =
+			
+			var Estimated_Benefit = SUM(Fact_ci_event_report[benefit])
+			var  EBITDA_Target = SUM(Dim_aosgoaltable[one_percentage_ebitda_target])
+			var answer = Estimated_Benefit / EBITDA_Target
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fdc216ea-fb76-4c61-88ee-fcff5e77da7b
+
+	measure '% Sites Complete' = [Complete Sites]/DISTINCTCOUNT(Dim_aosgoaltable[facility_name])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6dd0b5e2-5c24-470f-ba32-d358d5930ba7
+
+	measure '% Events Complete' =
+			
+			var Kaizen_Name = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="Complete")
+			var Completed_Events = SUM(Dim_aosgoaltable[completed_events])
+			var answer = Kaizen_Name / Completed_Events
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d439e876-0679-497f-9531-e2dfb80adc82
+
+	measure '% Est Benefit Complete' = [Benefit Complete]/Sum(Dim_aosgoaltable[one_percentage_ebitda_target])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7aedc990-35bc-4aba-9193-db9ee811f616
+
+	measure 'Prior Year Benefit' = ```
+			
+			VAR yearValue = IF(ISFILTERED(Dim_aosgoaltable[year]), SELECTEDVALUE(Dim_aosgoaltable[year]) - 1, YEAR(TODAY()) - 1)
+			VAR result = CALCULATE(
+			    SUM(Fact_ci_event_report[carryoverbenefit]),
+			    FILTER(
+			        ALL(Fact_ci_event_report),
+			        YEAR(Fact_ci_event_report[plandate]) = yearValue &&
+			        Fact_ci_event_report[facility_id] IN VALUES(Dim_aosgoaltable[facility_id]) &&
+			        Fact_ci_event_report[EventStatus] = "Complete"
+			    )
+			)
+			RETURN IF(ISBLANK(result), 0, result)
+			
+			
+			
+			```
+		formatString: 0.00
+		lineageTag: 4898b1c1-11c0-4045-9595-465f02d12f06
+
+	measure 'Current Year Benefit' =
+			
+			var answer = CALCULATE(Sum(Fact_ci_event_report[projectyearbenefit]), Fact_ci_event_report[EventStatus]="Complete")
+			return
+			IF(answer >= 0, answer, 0)
+		formatString: 0.00
+		lineageTag: 66bbdacb-b362-417d-811d-43a69969e7f3
+
+	measure 'Carry Over Benefit' =
+			
+			var answer = CALCULATE(Sum(Fact_ci_event_report[carryoverbenefit]), Fact_ci_event_report[EventStatus]="Complete")
+			return
+			IF(answer >= 0, answer, 0)
+		formatString: 0.00
+		lineageTag: 6239e74a-d61e-4f0b-9975-49bd3575a8a6
+
+	measure 'Validated Events' =
+			
+			var numerator = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="Complete", Fact_ci_event_report[benefit] >= 30000, ISBLANK(eventapprovaldetails[actiontakenon]) = FALSE(), eventapprovaldetails[FP&A Validation] = "Approved")
+			var denominator = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="Complete", Fact_ci_event_report[benefit] >= 30000)
+			var answer = numerator / denominator
+			return
+			IF(answer > 0, answer, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d689714e-2150-486b-bc76-c73cc8ac3333
+
+	measure 'Validated to Total' =
+			
+			var answer = [Validated Benefit] / [Benefit Complete]
+			return
+			IF(answer > 1, 1, answer)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0e05c9f2-4488-46ab-abb1-1c60924a09a2
+
+	measure 'var numerator' = ```
+			CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="Complete", Fact_ci_event_report[benefit] >= 30000, ISBLANK(eventapprovaldetails[actiontakenon]) = FALSE(), eventapprovaldetails[FP&A Validation] = "Approved")
+			
+			```
+		formatString: 0
+		lineageTag: 29bc50a1-12eb-43d6-9fe5-a4c9390ee1b7
+
+	measure 'var denominator' = CALCULATE(DISTINCTCOUNT(Fact_ci_event_report[eventid]),Fact_ci_event_report[eventstatus]="Complete", Fact_ci_event_report[benefit] >= 30000)
+		formatString: 0
+		lineageTag: b8d1b825-a477-41af-ba80-251e5cbbf2fd
+
+	measure 'Validated Benefit %_tooltip' = "Information can be seen by selecting one currency at a time"
+		lineageTag: 91a2c69f-9000-4f71-9b40-3ed387c00f69
+
+	measure 'Planned Benefits Format' = ```
+			
+			var result = CALCULATE(SUM(Fact_ci_event_report[Benefit]))
+			var formattedResult = IF(result >= 1000000000, FORMAT(result/1000000000, "#,#.0B"), 
+			                      IF(result >= 1000000, FORMAT(result/1000000, "#,#.0M"),
+			                      IF(result >= 1000, FORMAT(result/1000, "#,#.0K"),
+			                      FORMAT(result, "#,#.0"))))
+			var symbol = LOOKUPVALUE('Dim_Currency'[currency_symbol], 'Dim_Currency'[currency_code], SELECTEDVALUE(Fact_ci_event_report[Currency]))
+			return CONCATENATE(symbol,IF(formattedResult = BLANK(),0 ,formattedResult))
+			```
+		lineageTag: dfac2295-f7f4-45e6-9c40-4aade9f296c9
+
+	column Column
+		formatString: 0
+		lineageTag: 8b603dba-504d-4045-96e9-f89648bd69f0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calc_Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 7f9af267b1d24c60b2453f85e3810fb3
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":null}
+
+	annotation 277cc1b9-af89-4597-8e15-cacc25c0886b = To use special characters in a calculated table name, enclose the entire name in brackets ( [] ) and add a ] to any closing brackets in the name.
+

@@ -1,0 +1,56 @@
+table Dim_languages
+	lineageTag: fa2adfbd-81eb-467d-8ffa-d33f0a90bcb7
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e30e49c-4cba-424d-9577-8fad6958f860
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column LanguageCode
+		dataType: string
+		lineageTag: 08cafb3a-e39b-4d3a-8970-0aa1c55666f8
+		summarizeBy: none
+		sourceColumn: LanguageCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: fd71a4ac-14bf-4708-a61e-6bdc2c30e8fb
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column isactive
+		dataType: int64
+		formatString: 0
+		lineageTag: 278c7786-51d1-494d-98c0-cb7da22d6ee0
+		summarizeBy: sum
+		sourceColumn: isactive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_languages = m
+		mode: import
+		source =
+				let
+				    Source = AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"),
+				    amc_semantic_layer = Source{[Name="amc_semantic_layer"]}[Data],
+				    language1 = amc_semantic_layer{[Name="language"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(language1, each ([isactive] = 1)),
+				    #"Replaced Value" = Table.ReplaceValue(#"Filtered Rows","_","-",Replacer.ReplaceText,{"code"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Replaced Value",{{"code", "LanguageCode"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

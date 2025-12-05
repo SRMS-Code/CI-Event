@@ -1,0 +1,185 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 17.5,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 703.37777625189892,
+            "y": 365.88888888888891
+          },
+          "nodeIndex": "eventapprovaldetails",
+          "nodeLineageTag": "a5c46189-96a4-4072-b7b5-7b21391670f7",
+          "size": {
+            "height": 156,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 143.03889041476779,
+            "y": 493.20554945203992
+          },
+          "nodeIndex": "vw_cievent_kpi",
+          "nodeLineageTag": "5eb6840a-d97f-4181-931a-ec58a0c2cd83",
+          "size": {
+            "height": 159.25,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 615.34444597032325,
+            "y": 6.3888888888888857
+          },
+          "nodeIndex": "vw_fpavalidation",
+          "nodeLineageTag": "b82e8f46-4a3e-4a7e-9006-586d3c89a871",
+          "size": {
+            "height": 147,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 433.33333333333331,
+            "y": 274.55555555555554
+          },
+          "nodeIndex": "Fact_ci_event_report",
+          "nodeLineageTag": "b040c618-f5f5-4f40-9cbc-6914aa83e5b0",
+          "size": {
+            "height": 220,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 1003.1111111111111,
+            "y": 427.19999694824219
+          },
+          "nodeIndex": "Calc_Measures",
+          "nodeLineageTag": "0759e953-08ab-4eca-abaf-2f35281166b5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1287.1111111111111,
+            "y": 226.22777472601996
+          },
+          "nodeIndex": "TranslationMeasures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1855.1111111111111,
+            "y": 176.22777472601996
+          },
+          "nodeIndex": "Translation details",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 2139.1111111111113,
+            "y": 274.22777472601996
+          },
+          "nodeIndex": "Last Updated",
+          "nodeLineageTag": "d297cc3c-1848-4718-8b77-dbfae33a4186",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 875.5,
+            "y": 78.888888888888886
+          },
+          "nodeIndex": "Dim_fpamanagers",
+          "nodeLineageTag": "2da3ba2f-3405-4a67-84bd-b18981c6b1d7",
+          "size": {
+            "height": 147,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1571.1111111111111,
+            "y": 238.22777472601996
+          },
+          "nodeIndex": "Dim_languages",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 8.88888888888889
+          },
+          "nodeIndex": "Dim_sitemaster",
+          "size": {
+            "height": 208.88888888888891,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 313.88888888888886,
+            "y": 0
+          },
+          "nodeIndex": "Dim_aosgoaltable",
+          "size": {
+            "height": 213.25,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2.2222222222222285,
+            "y": 273.36666361490882
+          },
+          "nodeIndex": "Dim_Currency",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,123 @@
+table eventapprovaldetails
+	lineageTag: a5c46189-96a4-4072-b7b5-7b21391670f7
+
+	column id
+		dataType: string
+		lineageTag: e6090b76-73b6-453f-9752-cce8cc127762
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventid
+		dataType: string
+		lineageTag: ba9db8d9-0f7a-4681-8ed2-4d93654e0b32
+		summarizeBy: none
+		sourceColumn: eventid
+
+		annotation SummarizationSetBy = Automatic
+
+	column actionstatus
+		dataType: string
+		lineageTag: 4f033516-425a-43bc-a078-a8d63070d956
+		summarizeBy: none
+		sourceColumn: actionstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column approvaltype
+		dataType: string
+		lineageTag: 26c391ae-868f-4ca4-944c-729727495fa9
+		summarizeBy: none
+		sourceColumn: approvaltype
+
+		annotation SummarizationSetBy = Automatic
+
+	column approverid
+		dataType: string
+		lineageTag: 1ff493f7-5b69-4e22-8b04-6febef01fcda
+		summarizeBy: none
+		sourceColumn: approverid
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8ac895cc-943e-4d2c-8ae9-749db2b75868
+		summarizeBy: none
+		sourceColumn: createdon
+
+		variation Variation
+			isDefault
+			relationship: 869b3a8f-9ef3-4580-8b9f-1a090a7b74b8
+			defaultHierarchy: LocalDateTable_b4f32450-df12-4b28-8273-ab0c005b3c6a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column actiontakenon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9641e97a-b951-4fc7-baef-f134964817e7
+		summarizeBy: none
+		sourceColumn: actiontakenon
+
+		variation Variation
+			isDefault
+			relationship: dd9cb27c-c162-4c05-83d7-1bb7c3ecf18a
+			defaultHierarchy: LocalDateTable_716c8e84-81d3-4daf-b38e-b1e003b379e9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments
+		dataType: string
+		lineageTag: 1765142c-9b9a-4f0d-8546-8811af080b83
+		summarizeBy: none
+		sourceColumn: comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key FPAValidation' = eventapprovaldetails[eventid]&"_"&IF(eventapprovaldetails[actionstatus] = "Approved" && eventapprovaldetails[approvaltype] = "FPAManager", "FPAManager-Approved", IF(eventapprovaldetails[actionstatus] = "Rejected" && eventapprovaldetails[approvaltype] = "FPAManager", "FPAManager-Rejected", IF(eventapprovaldetails[approvaltype] = "CIManager", "Other-In Process", BLANK())))
+		lineageTag: c1408c20-6f9d-43d3-84b8-e7ba5950e8b6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Validated On' = IF(eventapprovaldetails[approvaltype] = "FPAManager", eventapprovaldetails[actiontakenon], BLANK())
+		formatString: Long Date
+		lineageTag: 5622bbc0-4996-4a7e-a13c-cccc0a9e8e7a
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: ef14f728-6d75-49f3-9325-5fbb2e45e3de
+			defaultHierarchy: LocalDateTable_7b343dc7-dade-4e06-b54a-ca1b0d829180.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key = 'eventapprovaldetails'[eventid]&"_"&'eventapprovaldetails'[approvaltype]
+		lineageTag: 34f6be0e-5ad2-4cf2-bfea-7c4157334950
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FP&A Validation' = IF(eventapprovaldetails[approvaltype] = "FPAManager", IF(ISBLANK(eventapprovaldetails[actionstatus]) || eventapprovaldetails[actionstatus] = "In Process", "Pending", eventapprovaldetails[actionstatus]), BLANK())
+		lineageTag: 65b9d487-16bb-4f53-9646-5949bd16c37f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition eventapprovaldetails = m
+		mode: import
+		source =
+				let
+				    Source = Value.NativeQuery(AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"), "select * from amc_semantic_layer.eventapprovaldetails", null, [EnableFolding=true]),
+				    #"Replaced Value" = Table.ReplaceValue(Source,"NeedInfo","Need Info",Replacer.ReplaceText,{"actionstatus"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","InProcess","In Process",Replacer.ReplaceText,{"actionstatus"})
+				in
+				    #"Replaced Value1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

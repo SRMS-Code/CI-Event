@@ -1,0 +1,360 @@
+table vw_cievent_kpi
+	lineageTag: 5eb6840a-d97f-4181-931a-ec58a0c2cd83
+
+	column id
+		dataType: string
+		lineageTag: fa6c17be-dfa2-4738-a499-c5f72f448503
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventid
+		dataType: string
+		lineageTag: 3f15eb3e-3d94-42e6-9392-4a32d6c99310
+		summarizeBy: none
+		sourceColumn: eventid
+
+		annotation SummarizationSetBy = Automatic
+
+	column currentvalue
+		dataType: double
+		lineageTag: 34be2709-95a0-4ed8-b402-572d1603ccf5
+		summarizeBy: sum
+		sourceColumn: currentvalue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column targetvalue
+		dataType: double
+		lineageTag: ac55e421-bf24-4fb4-8a73-b6129384de56
+		summarizeBy: sum
+		sourceColumn: targetvalue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column uom
+		dataType: string
+		lineageTag: 6c8da416-399b-4a91-a608-07683c898140
+		summarizeBy: none
+		sourceColumn: uom
+
+		annotation SummarizationSetBy = Automatic
+
+	column achieved
+		dataType: double
+		lineageTag: 49e89b9e-e0f5-4f53-8511-b5cd434ebe0c
+		summarizeBy: sum
+		sourceColumn: achieved
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column improvement
+		dataType: double
+		lineageTag: 70f9bdc6-bc7b-491d-9f9c-62c8126d466a
+		summarizeBy: sum
+		sourceColumn: improvement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column percentimprovement
+		dataType: string
+		lineageTag: 75e038cb-7812-4cd7-8c12-de507f823937
+		summarizeBy: none
+		sourceColumn: percentimprovement
+
+		annotation SummarizationSetBy = Automatic
+
+	column weeks
+		dataType: string
+		lineageTag: 2b2bce6a-8c16-4be0-aa9a-4096e1cd92fd
+		summarizeBy: none
+		sourceColumn: weeks
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system_code
+		dataType: string
+		lineageTag: 5c0089b6-a189-4359-977d-55779914df72
+		summarizeBy: none
+		sourceColumn: source_system_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility
+		dataType: string
+		lineageTag: c5f4e43f-bf0e-4e4d-a4f9-642b1a6ead47
+		summarizeBy: none
+		sourceColumn: facility
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_id
+		dataType: string
+		lineageTag: 0faab93e-ab3f-4fa3-8842-ef36937c2318
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column eventtitle
+		dataType: string
+		lineageTag: 6d2de510-f352-4bc4-ba7f-8ea450ffa23b
+		summarizeBy: none
+		sourceColumn: eventtitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column approvingdirector
+		dataType: string
+		lineageTag: baf1c497-df30-4a04-a91a-ce6690537a26
+		summarizeBy: none
+		sourceColumn: approvingdirector
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 41dbeee1-f3c2-4d3e-853d-ff8a70a21f1f
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column district
+		dataType: string
+		lineageTag: 749221d5-759b-45d7-8fef-f937f43050f2
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column businesscase
+		dataType: string
+		lineageTag: c5f583b5-cf6c-43d3-90b4-84de1d483e3c
+		summarizeBy: none
+		sourceColumn: businesscase
+
+		annotation SummarizationSetBy = Automatic
+
+	column customername
+		dataType: string
+		lineageTag: de41f72f-ad3a-4149-8ee4-06f2859472eb
+		summarizeBy: none
+		sourceColumn: customername
+
+		annotation SummarizationSetBy = Automatic
+
+	column datesubmittedforapproval
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 882cd281-4701-41cd-8caf-95a6c2ae79c6
+		summarizeBy: none
+		sourceColumn: datesubmittedforapproval
+
+		variation Variation
+			isDefault
+			relationship: 80834cd1-465f-44d9-9112-8180b7e111c5
+			defaultHierarchy: LocalDateTable_a3b401d6-a807-47f3-a184-168c3f7f69e3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column goalstatement
+		dataType: string
+		lineageTag: e149f52c-b347-4a9b-93ed-45b69e4a323c
+		summarizeBy: none
+		sourceColumn: goalstatement
+
+		annotation SummarizationSetBy = Automatic
+
+	column problemstatement
+		dataType: string
+		lineageTag: bfcf3dc4-5d7f-4876-92c1-34433c07472f
+		summarizeBy: none
+		sourceColumn: problemstatement
+
+		annotation SummarizationSetBy = Automatic
+
+	column completiondate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0e10b944-62a7-4168-b28e-17efaaffa413
+		summarizeBy: none
+		sourceColumn: completiondate
+
+		variation Variation
+			isDefault
+			relationship: fa8a702d-912c-45bf-9faa-4a8b208611fe
+			defaultHierarchy: LocalDateTable_aa32761f-2c54-48a2-829e-f0c06830043b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column createdon
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1a393e92-bcbf-4438-8ae1-387dac4432d8
+		summarizeBy: none
+		sourceColumn: createdon
+
+		variation Variation
+			isDefault
+			relationship: a33dd3e5-5744-4cf8-b339-b0c47c254d34
+			defaultHierarchy: LocalDateTable_19c631fc-f269-4b35-9926-af6b706bea43.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column cimanager
+		dataType: string
+		lineageTag: e0f5f053-b6b1-4ad3-8df6-da622254b5ac
+		summarizeBy: none
+		sourceColumn: cimanager
+
+		annotation SummarizationSetBy = Automatic
+
+	column actualbenefit
+		dataType: double
+		lineageTag: 7daf4161-3685-4a34-b2bb-4fc45c29afe2
+		summarizeBy: sum
+		sourceColumn: actualbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column benefiteffectivedate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7b8e3cd7-2c66-4515-b53f-8137d907b0cf
+		summarizeBy: none
+		sourceColumn: benefiteffectivedate
+
+		variation Variation
+			isDefault
+			relationship: 9c42d5f2-0c69-409b-8991-81ce66c5c409
+			defaultHierarchy: LocalDateTable_fb3c67f4-805b-415d-bf14-ff51ff5e9e24.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column projectyearbenefit
+		dataType: int64
+		formatString: 0
+		lineageTag: 148dc9ce-5c59-4227-bc39-1af0e090d846
+		summarizeBy: sum
+		sourceColumn: projectyearbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+	column projectyearbenefitmonths
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f7cda41-6cc6-47ac-8277-c51cb28d09a5
+		summarizeBy: sum
+		sourceColumn: projectyearbenefitmonths
+
+		annotation SummarizationSetBy = Automatic
+
+	column carryoverbenefit
+		dataType: int64
+		formatString: 0
+		lineageTag: 80e2e869-0856-4530-9aa4-214e2cbaf85a
+		summarizeBy: sum
+		sourceColumn: carryoverbenefit
+
+		annotation SummarizationSetBy = Automatic
+
+	column carryoverbenefitmonths
+		dataType: int64
+		formatString: 0
+		lineageTag: 3692043b-0424-4660-ab44-4409094c97f3
+		summarizeBy: sum
+		sourceColumn: carryoverbenefitmonths
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_center
+		dataType: string
+		lineageTag: b551a375-016c-4c3c-86b5-1037881cfef8
+		summarizeBy: none
+		sourceColumn: site_center
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_center_description
+		dataType: string
+		lineageTag: 159685ee-2274-46d5-ba66-9da988322f32
+		summarizeBy: none
+		sourceColumn: site_center_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column filter_key
+		dataType: string
+		lineageTag: 7e3d19da-5ccf-41f9-9551-e2dcaf3f3581
+		summarizeBy: none
+		sourceColumn: filter_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_key
+		dataType: string
+		lineageTag: ca962eb7-d2c3-4f31-bf79-0a5234f783e0
+		summarizeBy: none
+		sourceColumn: facility_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column sitecenter_key
+		dataType: string
+		lineageTag: ea091760-4952-43bc-a620-b832248df38c
+		summarizeBy: none
+		sourceColumn: sitecenter_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_date_row_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 55d8bf2c-1382-4e58-8e7b-2bfd90d075ea
+		summarizeBy: sum
+		sourceColumn: report_date_row_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 1f9c5ceb-db64-48c4-9d24-40589387de89
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_cievent_kpi = m
+		mode: import
+		source =
+				let
+				    Source = AmazonRedshift.Database("americold-redshift-stg.cdvmknvfkk6s.us-west-2.redshift.amazonaws.com","lvi3plp-stg"),
+				    cievent = Source{[Name="amc_semantic_layer"]}[Data],
+				    vw_cievent_kpi1 = cievent{[Name="vw_cievent_kpi"]}[Data]
+				in
+				    vw_cievent_kpi1
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

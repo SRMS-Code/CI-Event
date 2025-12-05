@@ -1,0 +1,148 @@
+relationship 7567c391-ffd7-4b68-967b-e8249a1c9558
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_ci_event_report.completiondate
+	toColumn: LocalDateTable_3dcc68ec-23f9-4268-a6a2-089c420a54f2.Date
+
+relationship 4825798d-2b5b-41ca-b1e6-585695c7e852
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_ci_event_report.plandate
+	toColumn: LocalDateTable_835f3892-d07f-4cf0-843b-a48a59b7d20f.Date
+
+relationship 0b43f6b1-dc5c-45bf-8590-6b83d50cc58a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_ci_event_report.benefiteffectivedate
+	toColumn: LocalDateTable_d795fab9-dcc0-428f-b7e7-f48b21cd0210.Date
+
+relationship 869b3a8f-9ef3-4580-8b9f-1a090a7b74b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: eventapprovaldetails.createdon
+	toColumn: LocalDateTable_b4f32450-df12-4b28-8273-ab0c005b3c6a.Date
+
+relationship dd9cb27c-c162-4c05-83d7-1bb7c3ecf18a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: eventapprovaldetails.actiontakenon
+	toColumn: LocalDateTable_716c8e84-81d3-4daf-b38e-b1e003b379e9.Date
+
+relationship d718ee32-e2f2-461b-86da-f513145a4a9b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_aosgoaltable.baseline_date
+	toColumn: LocalDateTable_e14b893c-e215-45c8-8fb4-2525e11e27b6.Date
+
+relationship e03e368b-566d-c252-e6c5-bd1ad5b6d674
+	fromColumn: eventapprovaldetails.approverid
+	toColumn: Dim_fpamanagers.userid
+
+relationship ef14f728-6d75-49f3-9325-5fbb2e45e3de
+	joinOnDateBehavior: datePartOnly
+	fromColumn: eventapprovaldetails.'Validated On'
+	toColumn: LocalDateTable_7b343dc7-dade-4e06-b54a-ca1b0d829180.Date
+
+relationship 3818f787-6b6f-6446-2973-619026db1a5b
+	crossFilteringBehavior: bothDirections
+	fromColumn: eventapprovaldetails.'Key FPAValidation'
+	toColumn: vw_fpavalidation.Key
+
+relationship 48934fd6-f251-3df7-352a-d252ca92ec3e
+	crossFilteringBehavior: bothDirections
+	fromColumn: vw_cievent_kpi.eventid
+	toColumn: Fact_ci_event_report.eventid
+
+relationship 1e6be693-25ca-47d6-a179-dfde6a6c5602
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_ci_event_report.datesubmittedforapproval
+	toColumn: LocalDateTable_0d630978-200f-4b6f-b2cb-45039097185b.Date
+
+relationship 8e32e129-3eb9-4ae6-bd0c-ab11d550d410
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_ci_event_report.createdon
+	toColumn: LocalDateTable_24148cfc-b271-433a-b6c2-30180f3e54e9.Date
+
+relationship f48348c6-3724-4bfc-8b4d-91740eff4014
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_ci_event_report.duedate
+	toColumn: LocalDateTable_81807df2-7eb6-4d2e-bb66-0ea2fe58cd21.Date
+
+relationship AutoDetected_f97a0b59-509d-4bca-a4cc-41398e8c3870
+	fromColumn: Fact_ci_event_report.currency
+	toColumn: Dim_Currency.currency_code
+
+relationship 6a23402f-47dd-9aa1-c241-6cb42f52bec0
+	fromColumn: Fact_ci_event_report.'Key 1'
+	toColumn: Dim_aosgoaltable.'Key 1'
+
+relationship f35b597a-f504-9fa8-b5ab-4557cb1c25fb
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: vw_fpavalidation.eventid
+	toColumn: Fact_ci_event_report.eventid
+
+relationship 80834cd1-465f-44d9-9112-8180b7e111c5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_cievent_kpi.datesubmittedforapproval
+	toColumn: LocalDateTable_a3b401d6-a807-47f3-a184-168c3f7f69e3.Date
+
+relationship fa8a702d-912c-45bf-9faa-4a8b208611fe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_cievent_kpi.completiondate
+	toColumn: LocalDateTable_aa32761f-2c54-48a2-829e-f0c06830043b.Date
+
+relationship a33dd3e5-5744-4cf8-b339-b0c47c254d34
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_cievent_kpi.createdon
+	toColumn: LocalDateTable_19c631fc-f269-4b35-9926-af6b706bea43.Date
+
+relationship 9c42d5f2-0c69-409b-8991-81ce66c5c409
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_cievent_kpi.benefiteffectivedate
+	toColumn: LocalDateTable_fb3c67f4-805b-415d-bf14-ff51ff5e9e24.Date
+
+relationship 2655484e-48c8-410a-9a8d-0592b5350f11
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.sag_cutover_date
+	toColumn: LocalDateTable_60e89065-c984-4f53-b4d5-2a123ea37754.Date
+
+relationship abd3622b-b01a-424c-9843-e4c6f5465f12
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.cut_over_date
+	toColumn: LocalDateTable_ac446bb0-8d42-4b5f-9b13-e44f54c2e36c.Date
+
+relationship 16fe6733-c669-4fe0-890e-cc5d62f66064
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.change_start_date
+	toColumn: LocalDateTable_e363bb4a-2dbc-4290-99f4-c7bca7d5d4d3.Date
+
+relationship a1050f85-e586-47ad-b697-da101b55486f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.change_end_date
+	toColumn: LocalDateTable_4391b859-367a-4d3d-9922-ed38f4cf5f46.Date
+
+relationship 57630e96-05ee-4024-a2dd-64ebe8dff498
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.json_active_start_date
+	toColumn: LocalDateTable_e0021007-bd59-4b0a-aa88-2055932bf9cb.Date
+
+relationship f30e688d-6ae1-4f40-97b9-250afdd08508
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.json_active_end_date
+	toColumn: LocalDateTable_f68effe7-fadf-4ede-b63a-2c084d81971f.Date
+
+relationship 77d74a0f-51a4-41af-92ea-2c9f839ebc33
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.createdtimestamp
+	toColumn: LocalDateTable_a82fee8f-43c0-4f9d-9772-10fd2d7d1983.Date
+
+relationship c0a49c75-276d-4924-9df5-3934fadc07eb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_sitemaster.lastupdatedtimestamp
+	toColumn: LocalDateTable_a76f788a-633e-4a3f-9e85-231b372ec17b.Date
+
+relationship efc77ce5-8000-81b0-06c1-7a672cce49a6
+	crossFilteringBehavior: bothDirections
+	fromColumn: Dim_aosgoaltable.sitecenter_key
+	toColumn: Dim_sitemaster.sitecenter_key
+
+relationship b90c1a50-390f-4e2c-80e9-59a23b217cda
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Last Updated'.'Date Last Refreshed'
+	toColumn: LocalDateTable_8777cbfc-4e71-4e15-a1c6-a44856761e26.Date
+

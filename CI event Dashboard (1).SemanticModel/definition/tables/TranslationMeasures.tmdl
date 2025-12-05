@@ -1,0 +1,719 @@
+table TranslationMeasures
+	lineageTag: f2448547-f7a5-4271-a15c-87c7e8da1b93
+
+	measure '% Benefit' = ```
+			
+			VAR _CurrentKey = "% Benefit"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: a2982d8f-4c7c-4ba2-ad7a-42b7ebb6bf56
+
+	measure 'Selected Language' = ```
+			IF(ISFILTERED(Dim_languages[Description]), SELECTEDVALUE('Dim_languages'[LanguageCode]), "en-US")
+			
+			```
+		lineageTag: cd7069ef-8513-4235-9dd3-4f8622e39c72
+
+	measure '% Planned' = ```
+			
+			VAR _CurrentKey = "% Planned"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 2f386b60-6026-4e78-8216-fede97583614
+
+	measure '% Planning' = ```
+			
+			VAR _CurrentKey = "% Planning"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 4f83f66f-36dd-4c86-8339-5a1450a909b4
+
+	measure '% Required' = ```
+			
+			VAR _CurrentKey = "% Required"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: fbba9f7c-fc07-464c-a086-ce276f59521a
+
+	measure %Complete = ```
+			
+			VAR _CurrentKey = "%Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage)
+			--var symbol = LOOKUPVALUE('currency'[currency_code], 'currency'[description], SELECTEDVALUE(vw_cievent_report[currency]))
+			var result = SUBSTITUTE(_translatedvalue, "USD", SELECTEDVALUE(Fact_ci_event_report[currency]))
+			RETURN result 
+			```
+		lineageTag: 9f0d11d6-39e7-46c2-aad4-9859da026706
+
+	measure '$ Month' = ```
+			
+			VAR _CurrentKey = "$ Month"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			var result = SUBSTITUTE(_translatedvalue, "USD", SELECTEDVALUE(Fact_ci_event_report[currency]))
+			RETURN result 
+			```
+		lineageTag: 0eb76a89-1238-42bd-b402-7b3da708cdd6
+
+	measure 'Accept Status' = ```
+			
+			VAR _CurrentKey = "Accept Status"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: cd03ac25-5fe8-4bfc-a8ea-f7f157d36a25
+
+	measure Approval = ```
+			
+			VAR _CurrentKey = "Approval"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: d2cefae1-a320-41d8-878e-c139a0574da7
+
+	measure 'Benefit $' = ```
+			
+			VAR _CurrentKey = "Benefit $"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			var result = SUBSTITUTE(_translatedvalue, "USD", SELECTEDVALUE(Fact_ci_event_report[currency]))
+			RETURN result
+			```
+		lineageTag: 343f396a-7822-4d8b-a224-ddd00d665391
+
+	measure 'Benefit Complete translate' = ```
+			
+			VAR _CurrentKey = "Benefit Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 7e98eaad-031e-4cfe-b03f-aaeed8383829
+
+	measure 'CI Events' = ```
+			
+			VAR _CurrentKey = "CI Events"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: a92f62c5-b312-4cc8-bc1d-75dae7303227
+
+	measure 'Comp Month' = ```
+			
+			VAR _CurrentKey = "Comp Month"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 1c6bf181-8dae-460c-be8f-168f9a658254
+
+	measure 'Complete translate' = ```
+			
+			VAR _CurrentKey = "Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 54e49150-6543-4754-9c3d-b28c9aeb83d2
+
+	measure 'Completed Events' = ```
+			
+			VAR _CurrentKey = "Completed Events"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 34e61f51-cb0e-4602-9219-b94a7a5e60b7
+
+	measure Completing = ```
+			
+			VAR _CurrentKey = "Completing"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 55b7132e-48c7-457c-aca8-0bcffd99690c
+
+	measure Currency = ```
+			
+			VAR _CurrentKey = "Currency"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 6fb92f5d-d157-4408-9e30-750e2004e2e7
+
+	measure 'EBITDA Complete' = ```
+			
+			VAR _CurrentKey = "EBITDA Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 69bd0e85-4ad0-43cc-bfbb-3e5a042045e5
+
+	measure EbitdaBenefit = ```
+			
+			VAR _CurrentKey = "EBITDA and Benefit"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			var result = SUBSTITUTE(_translatedvalue, "USD",SELECTEDVALUE(Fact_ci_event_report[currency]))
+			RETURN result
+			```
+		lineageTag: 410cf7b7-fc99-43ae-819a-59237069b9f0
+
+	measure 'Event %' = ```
+			
+			VAR _CurrentKey = "Event %"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: d3da9031-ea1a-4f15-8b7b-78f8d464637c
+
+	measure 'Event Complete' = ```
+			
+			VAR _CurrentKey = "Event Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: f135e73c-c0d6-4055-85a3-6706fb115dbc
+
+	measure 'Event Goals' = ```
+			
+			VAR _CurrentKey = "Event Goals"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: b9b55a6a-06b8-4997-bf47-d097b56ed4e5
+
+	measure 'Event Planning' = ```
+			
+			VAR _CurrentKey = "Event Planning"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 37264971-8b9c-4c5a-be94-ba9529819fea
+
+	measure 'Event Status' = ```
+			
+			VAR _CurrentKey = "Event Status"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 320604fd-6d7d-4552-85e7-aa7e107f0126
+
+	measure 'Event Types' = ```
+			
+			VAR _CurrentKey = "Event Types"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: ee978aa8-242b-4c74-9163-77c880897ee7
+
+	measure 'Event Year' = ```
+			
+			VAR _CurrentKey = "Event Year"
+			var preferrredLanguage = [Selected Language]
+			var _translatevalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatevalue
+			```
+		lineageTag: 36864e9a-72d0-4f79-9007-51f92243c364
+
+	measure 'Events Complete' = ```
+			
+			VAR _CurrentKey = "Events Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 15b4fd9e-8565-4e6f-9e08-de9f6cb472bf
+
+	measure 'FP&A Validation' = ```
+			
+			VAR _CurrentKey = "FP&A Validation"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 06541bf1-63cd-4178-867e-01b30097c441
+
+	measure Goal = ```
+			
+			VAR _CurrentKey = "Goal"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: c5a99df4-6991-4d6a-8ba2-7d7c72f3e724
+
+	measure 'Goal Sites' = ```
+			
+			VAR _CurrentKey = "Goal Sites"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 03eedf35-d642-469f-87c6-bd83be367a84
+
+	measure 'Hold %' = ```
+			
+			VAR _CurrentKey = "Hold %"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 3c55619b-dbaf-4d05-bfd5-a187bd07f0b5
+
+	measure 'In Proc %' = ```
+			
+			VAR _CurrentKey = "In Proc %"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 10225d0a-24f6-45d3-9e14-66b4a81661d4
+
+	measure 'In Process translate' = ```
+			
+			VAR _CurrentKey = "In Process"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 63b56351-46e4-4734-8244-76b29c997259
+
+	measure Information = ```
+			
+			VAR _CurrentKey = "Information"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: b1af3c5c-ec9a-4341-a26a-0df69f87b627
+
+	measure Location = ```
+			
+			VAR _CurrentKey = "Location"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: f300d74b-512b-4dd2-9dd4-d86a0305ba50
+
+	measure Locations = ```
+			
+			VAR _CurrentKey = "Locations"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 62f6c868-02a8-409a-80ec-c5a6899165be
+
+	measure 'Monit %' = ```
+			
+			VAR _CurrentKey = "Monit %"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 26103862-9f9c-4942-ba19-c26dcda6037d
+
+	measure 'Monitoring translate' = ```
+			
+			VAR _CurrentKey = "Monitoring"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: d9ad7a97-df03-4d05-9f14-192c85066efd
+
+	measure 'Need Info 1' = ```
+			
+			VAR _CurrentKey = "Need Info"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 73c9706a-ddc3-4c4a-a6c9-9b8b39930441
+
+	measure 'New Event translate' = ```
+			
+			VAR _CurrentKey = "New Event"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: c43c933e-3fe6-4e13-8629-9177dadd87e1
+
+	measure Note:Event = ```
+			
+			VAR _CurrentKey = "Note:Event"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 4f37ecdf-3f2f-4288-9e26-99899210cb5e
+
+	measure 'Note:Goal Scorecard' = ```
+			
+			VAR _CurrentKey = "Note:Goal Scorecard"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: c1d6311d-cf37-4d41-8ff8-3cd6013f5118
+
+	measure 'On Hold translate' = ```
+			
+			VAR _CurrentKey = "On Hold"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 2dd93f40-20ba-4031-be6b-01a9fe7428d0
+
+	measure 'Open Status' = ```
+			
+			VAR _CurrentKey = "Open Status"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: ac499964-5245-4149-ae50-2101df3d34ce
+
+	measure 'Opportunity Type' = ```
+			
+			VAR _CurrentKey = "Opportunity Type"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 0788226c-b889-406f-be37-d297b757f4f6
+
+	measure 'Pending CI Mgr translate' = ```
+			
+			VAR _CurrentKey = "Pending CI Mgr"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 027d06d0-879c-48d5-8855-03a72bbc1a77
+
+	measure 'Pending FP&A translate' = ```
+			
+			VAR _CurrentKey = "Pending FP&A"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: b1a4c40a-27eb-434d-948f-6ad04be57357
+
+	measure 'Pending Validation translate' = ```
+			
+			VAR _CurrentKey = "Pending Validation"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: f1a63faa-ef9c-4cc7-aeed-56b3303cea27
+
+	measure Planned = ```
+			
+			VAR _CurrentKey = "Planned"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 45cf8c81-8780-4e32-bfbb-208aa2345184
+
+	measure 'Planned Benefit' = ```
+			
+			VAR _CurrentKey = "Planned Benefit"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: f0e4f849-ee0e-4fdc-96d1-df67c23fd531
+
+	measure Reporting = ```
+			
+			VAR _CurrentKey = "Reporting"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 0c984ab2-46c4-45fd-8f9e-2b88a6778985
+
+	measure 'Site Complete' = ```
+			
+			VAR _CurrentKey = "Site Complete"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 04d03095-8146-46ee-9f1b-d653e1829b02
+
+	measure 'Site Planning' = ```
+			
+			VAR _CurrentKey = "Site Planning"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: bc7faf24-9e6f-4dc2-a2bf-8b9d58bb0a9e
+
+	measure 'Sites Reporting' = ```
+			
+			VAR _CurrentKey = "Sites Reporting"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 716f4732-b2d7-4400-8e90-c77fded51374
+
+	measure Target = ```
+			
+			VAR _CurrentKey = "Target"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: f5c73d11-34a6-4d70-b3d9-fe21e7367b1e
+
+	measure Title:Dashboard = ```
+			
+			VAR _CurrentKey = "Title:Dashboard"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 82369459-0984-4b1a-bff2-d4f8246cd67e
+
+	measure 'Title:Event Summary' = ```
+			
+			VAR _CurrentKey = "Title:Event Summary"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 8a74de01-ca78-494b-8ce1-daa55fcd3789
+
+	measure 'Title:Goal Summary' = ```
+			
+			VAR _CurrentKey = "Title:Goal Summary"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 532c27ee-d1ab-4fe1-975c-fbbef4a46531
+
+	measure Title:Overview = ```
+			
+			VAR _CurrentKey = "Title:Overview"
+			var preferrredLanguage = [Selected Language]
+			var _translatevalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatevalue
+			```
+		lineageTag: 4ef476a5-c131-4c4c-b843-77b0c85b5129
+
+	measure Title:Validation = ```
+			
+			VAR _CurrentKey = "Title:Validation"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: ef197921-01d4-4aa7-a5df-26259801541d
+
+	measure 'Total Events' = ```
+			
+			VAR _CurrentKey = "Total Events"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 27239bbd-3484-4c86-8846-60829b09ebd8
+
+	measure Validated = ```
+			
+			VAR _CurrentKey = "Validated"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: e43b4e5e-0098-4c30-ac7d-4f061d83647b
+
+	measure 'Validated %' = ```
+			
+			VAR _CurrentKey = "Validated %"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 4567d7a1-13e6-41b2-8fcc-a531de017bed
+
+	measure 'Validated Benefit translate' = ```
+			
+			VAR _CurrentKey = "Validated Benefit"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			var result = SUBSTITUTE(_translatedvalue, "USD", SELECTEDVALUE(Fact_ci_event_report[currency]))
+			RETURN result 
+			```
+		lineageTag: 79cd210d-0f96-4146-a80c-e1674014c79f
+
+	measure 'Validated Benefits' = ```
+			
+			VAR _CurrentKey = "Validated Benefits"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			
+			```
+		lineageTag: 08ba376b-26b3-4806-8ab0-c78ba889a71f
+
+	measure 'Filter-Site Center' = ```
+			
+			VAR _CurrentKey = "Site Center"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: a6284210-af82-4d30-bdc3-3dd64a352350
+
+	measure Filter-Region = ```
+			
+			VAR _CurrentKey = "Region"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 5c777065-a19c-4270-bb86-06da76ff6ce3
+
+	measure Filter-Facility = ```
+			
+			VAR _CurrentKey = "Facility"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 804a9a63-5446-4df9-bb32-ee7a704d05bf
+
+	measure Filter-District = ```
+			
+			VAR _CurrentKey = "District"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language Code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 0923bd24-edaf-4951-b383-4ad33487617f
+
+	measure LastUpdated =
+			
+			VAR _CurrentKey = "Last Updated"
+			VAR preferrredLanguage = [Selected Language]
+			VAR _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage)
+			RETURN _translatedvalue
+		lineageTag: 7ee44b6c-72c7-4389-b120-0a6fe1b017ab
+
+	measure LastRefreshDate = ```
+			
+			VAR preferrredLanguage = [Selected Language]
+			VAR timeValue = FORMAT(DISTINCT('Last Updated'[Date Last Refreshed]) - TIME(4, 0, 0), "mmm dd hh:nn AMPM")
+			VAR estValue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], "EST", 'Translation Details'[Language code], preferrredLanguage)
+			RETURN timeValue & " " & estValue
+			
+			```
+		lineageTag: 37836b37-fe89-4c2c-93ca-3c7152923530
+
+	measure 'Overview Title' = ```
+			
+			VAR _CurrentKey = "Overview Title"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 6b88b86c-cd88-4a87-be93-fba74d48c1c1
+
+	measure 'Dashboard Title' = ```
+			
+			VAR _CurrentKey = "Dashboard Title"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: 4511bf59-70b5-4fa9-b744-812d6f60869b
+
+	measure 'Event Summary Title' = ```
+			
+			VAR _CurrentKey = "Event Summary Title"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: cbac1d16-afc9-4500-98ed-7ed1ae2bc030
+
+	measure 'Validation Title' = ```
+			
+			VAR _CurrentKey = "Validation Title"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: c26b5d55-dcc9-45df-bd81-2ede65f84ec8
+
+	measure 'Goal Scorecard Title' = ```
+			
+			VAR _CurrentKey = "Goal Scorecard Title"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: aeabda35-359f-44c9-a914-03bddc736681
+
+	measure 'Report Title' = ```
+			
+			VAR _CurrentKey = "Report Title"
+			var preferrredLanguage = [Selected Language]
+			var _translatedvalue = LOOKUPVALUE('Translation Details'[Translation Value], 'Translation Details'[Translation Code], _CurrentKey, 'Translation Details'[Language code], preferrredLanguage) 
+			RETURN _translatedvalue
+			```
+		lineageTag: c130e3c2-8d68-4f7d-9334-810e31a1a218
+
+	column Column
+		formatString: 0
+		lineageTag: 23613419-776f-4de9-ba4b-640f1bbc2e87
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TranslationMeasures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 8ef046be5b454df9858a75dee2d7555f
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":null}
+
+	annotation 277cc1b9-af89-4597-8e15-cacc25c0886b = To use special characters in a calculated table name, enclose the entire name in brackets ( [] ) and add a ] to any closing brackets in the name.
+
